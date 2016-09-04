@@ -4,17 +4,19 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Person {
+public class User {
 	
 	private String name;
 	private String mobile;
+	private String email;
 	private double totalOutstanding;
 	private Map<String,Double> individualPersonLevelOutstanding; 
 	
-	public Person(String name, String mobile) {
+	public User(final String name, final String mobile, final String email) {
 		super();
 		this.name = name;
 		this.mobile = mobile;
+		this.email = email;
 		individualPersonLevelOutstanding=new LinkedHashMap<String,Double>();
 	}
 	
@@ -24,6 +26,10 @@ public class Person {
 
 	public String getMobile() {
 		return mobile;
+	}
+	
+	public String getEmail() {
+		return email;
 	}
 
 	public void addExpenses(final String person,final double expense){
@@ -41,9 +47,9 @@ public class Person {
 		
 	}
 	
-	public void addSourceExpenses(final List<Person> beneficiaries,final double share){
+	public void addSourceExpenses(final List<User> beneficiaries,final double share){
 		
-		for(Person person:beneficiaries){
+		for(User person:beneficiaries){
 			
 			if(individualPersonLevelOutstanding.containsKey(person)){
 				individualPersonLevelOutstanding.put(person.getMobile(), individualPersonLevelOutstanding.get(person)+share);
