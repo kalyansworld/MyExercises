@@ -10,6 +10,7 @@ public class Group {
 	private String owner;
 	private String creationDate;
 	
+	
 	public String getName() {
 		return name;
 	}
