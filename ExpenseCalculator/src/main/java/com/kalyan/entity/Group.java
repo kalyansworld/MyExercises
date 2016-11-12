@@ -1,14 +1,19 @@
 package com.kalyan.entity;
 
+import java.util.LinkedList;
 import java.util.List;
 
 public class Group {
 	
 	private String name;
-	private List<User> userList;
+	private List<User> userList=new LinkedList<User>();
 	private List<Expense> expenseList;
 	private String owner;
 	private String creationDate;
+	
+	public Group(final String groupName){
+		name=groupName;
+	}
 	
 	
 	public String getName() {
@@ -23,7 +28,7 @@ public class Group {
 		return userList;
 	}
 	
-	public void setUserList(List<User> userList) {
+	public void addUserList(List<User> userList) {
 		this.userList = userList;
 	}
 	
@@ -51,5 +56,41 @@ public class Group {
 		this.creationDate = creationDate;
 	}
 	
+	public void NormalizeExpenses(){
+		
+	}
+
+
+	public void load() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	public boolean avail() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+	public void delete() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	public void addUsers(List<User> users) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	public void removeUsers(List<User> users) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
 
 }

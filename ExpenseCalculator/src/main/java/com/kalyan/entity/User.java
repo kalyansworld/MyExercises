@@ -12,12 +12,8 @@ public class User {
 	private double totalOutstanding;
 	private Map<String,Double> individualPersonLevelOutstanding; 
 	
-	public User(final String name, final String mobile, final String email) {
-		super();
-		this.name = name;
+	public User(final String mobile) {
 		this.mobile = mobile;
-		this.email = email;
-		individualPersonLevelOutstanding=new LinkedHashMap<String,Double>();
 	}
 	
 	public String getName() {
@@ -71,5 +67,20 @@ public class User {
 	
 	public Map<String,Double> getIndividualPersonLevelOutstanding(){
 		return individualPersonLevelOutstanding;
+	}
+
+	public void load() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void updateMe(User userData) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void deleteMe() {
+		// TODO Auto-generated method stub
+		
 	}
 }

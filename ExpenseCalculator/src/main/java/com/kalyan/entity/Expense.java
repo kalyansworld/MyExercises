@@ -7,12 +7,12 @@ public class Expense {
 	
 	private String name;
 	private double totalExpenses;
-	private User source;
-	private List<User> beneficiaries;
+	private String source;
+	private List<String> beneficiaries;
 	private Date date;
 	
-	public Expense(final String entityName,final double totalExpenses,final User source,
-			final List<User> beneficiaries) {
+	public Expense(final String entityName,final double totalExpenses,final String source,
+			final List<String> beneficiaries) {
 		super();
 		this.name = entityName;
 		this.totalExpenses = totalExpenses;
@@ -21,8 +21,8 @@ public class Expense {
 		this.date=new Date();
 	}
 	
-	public Expense(final String entityName,final double totalExpenses,final User source,
-			final List<User> beneficiaries,final Date date) {
+	public Expense(final String entityName,final double totalExpenses,final String source,
+			final List<String> beneficiaries,final Date date) {
 		super();
 		this.name = entityName;
 		this.totalExpenses = totalExpenses;
@@ -42,18 +42,14 @@ public class Expense {
 	public Date getDate() {
 		return date;
 	}
+	
+	public String getSource() {
+		return source;
+	}
 
-	public void calculateExpenses(){
+	public double getIndividualShare(){
 		
-		double individualShare=totalExpenses/beneficiaries.size();
-		
-		//updating source with beneficiaries details
-		source.addSourceExpenses(beneficiaries, individualShare);
-		
-		for(User person:beneficiaries){
-			person.addExpenses(source.getMobile(), -individualShare);
-		}
-		
+		return totalExpenses/beneficiaries.size();
 	}
 
 }
